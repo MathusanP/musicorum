@@ -1,0 +1,19 @@
+{
+  "name": "musicorum",
+  "version": "1.0.0",
+  "description": "Music bot for discord",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "£ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "musicorum"
+  },
+  "author": "bagel #1475",
+  "license": "ISC"
+}
