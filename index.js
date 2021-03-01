@@ -43,7 +43,7 @@ command(bot, 'help', (message) => {
     const embed = new Discord.MessageEmbed()
       .setTitle('Here are the list of current commands!')
       .setFooter('This bot is in beta more commands are yet to be added!')
-      .setColor('#eb8d71')
+      .setColor('RANDOM')
       .addFields(
         {
           name: '£helpmusic',
@@ -65,7 +65,7 @@ command(bot, 'helpmusic', (message) => {
     const embed = new Discord.MessageEmbed()
       .setTitle('Here are the list of current music commands!')
       .setFooter('Music brought to you by distube!')
-      .setColor('#e60742')
+      .setColor('RANDOM')
       .addFields(
         {
           name: '£play (or"£p")',
