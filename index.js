@@ -95,9 +95,7 @@ bot.login(token)
 bot.login(token)
 
 
-bot.on("guildCreate", guild => {
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-});
+
 
 bot.on("guildDelete", guild => {
 
@@ -115,3 +113,21 @@ bot.on("guildCreate", guild => {
 })
 
 
+
+bot.on('message', async msg => {
+  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+  const args = msg.content.slice(prefix.length).trim().split(' ');
+  const command = args.shift().toLowerCase();
+
+ 
+  if (command === "ping") {
+      const pingEmbed = new Discord.MessageEmbed()
+      .setColor('RANDOM')
+      .setTitle('Pong!')
+      .addField('Latency', (`${Date.now() - msg.createdTimestamp}ms`), true)
+      .addField('API Latency', (`${Math.round(bot.ws.ping)}ms`), true)
+  
+      msg.channel.send(pingEmbed);
+  process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));
+  }})
+bot.login(token)
