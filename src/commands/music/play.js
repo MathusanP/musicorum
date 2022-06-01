@@ -3,6 +3,13 @@ const { MessageEmbed } = require("discord.js")
 const { QueryType } = require("discord-player")
 
 module.exports = {
+    name: 'play',
+	description: 'Plays a song',
+	usage: '',
+
+	permissions: [],
+	ownerOnly: false,
+	guildOnly: true,
 	data: new SlashCommandBuilder()
 		.setName("play")
 		.setDescription("loads songs from youtube")
