@@ -5,6 +5,7 @@
     "@discordjs/voice": "^0.9.0",
     "discord-player": "^5.2.2",
     "discord.js": "^13.7.0",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "ytdl": "^1.4.1"
@@ -12,8 +13,7 @@
   "name": "musicorum",
   "version": "2.0.0",
   "description": "A discord music bot!",
-  "main": "index.js",
-  "devDependencies": {},
+  "main": "src/index.js",
   "scripts": {
     "test": "/ping"
   },
