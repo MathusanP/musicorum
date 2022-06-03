@@ -8,5 +8,23 @@
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "ytdl": "^1.4.1"
-  }
+  },
+  "name": "musicorum",
+  "version": "2.0.0",
+  "description": "A discord music bot!",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "/ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagelwastaken/musicorum.git"
+  },
+  "author": "bagelwastaken",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bagelwastaken/musicorum/issues"
+  },
+  "homepage": "https://github.com/bagelwastaken/musicorum#readme"
 }
