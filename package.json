@@ -13,7 +13,7 @@
   "name": "musicorum",
   "version": "2.0.0",
   "description": "A discord music bot!",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "/ping"
   },
