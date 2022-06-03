@@ -21,8 +21,5 @@ client.player = new Player(client, {
     }
 })
 
-/*
 require('dotenv').config();
 client.login(process.env['Token']);
-*/
-client.login('ODE1MjE2MjczMjk0MjI5NTA0.G605WY.qfjCa3F-KggSwljQux6S8QMLZu4mScDCLeK16Y')

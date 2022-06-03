@@ -20,7 +20,7 @@ module.exports = {
 		/* Set client status */
 		client.user.setPresence({
 			status: 'online',
-			activities: [{ type: 'LISTENING', name: 'to music' }],
+			activities: [{ type: 'LISTENING', name: 'music' }],
 		});
 
 		/* Registering slash commands */

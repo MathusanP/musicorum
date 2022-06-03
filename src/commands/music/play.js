@@ -28,9 +28,9 @@ module.exports = {
 		.addSubcommand((subcommand) =>
 			subcommand
 				.setName("search")
-				.setDescription("Searches for sogn based on provided keywords")
+				.setDescription("Uses your search query to find a song.")
 				.addStringOption((option) =>
-					option.setName("searchterms").setDescription("the search keywords").setRequired(true)
+					option.setName("query").setDescription("Enter your serach query").setRequired(true)
 				)
 		),
 	execute: async ({ interaction, client }) => {
@@ -73,7 +73,7 @@ module.exports = {
                 .setDescription(`**${result.tracks.length} songs from [${playlist.title}](${playlist.url})** have been added to the Queue`)
                 .setThumbnail(playlist.thumbnail)
 		} else if (interaction.options.getSubcommand() === "search") {
-            let url = interaction.options.getString("searchterms")
+            let url = interaction.options.getString("query")
             const result = await client.player.search(url, {
                 requestedBy: interaction.user,
                 searchEngine: QueryType.AUTO
