@@ -14,12 +14,12 @@ module.exports = {
     execute: async ({ client, interaction }) => {
         const queue = client.player.getQueue(interaction.guildId)
     
-        if (!queue) return await interaction.editReply("There are no songs in the queue")
+        if (!queue) return await interaction.followUp("There are no songs in the queue")
     
         const currentSong = queue.current
     
         queue.skip()
-        await interaction.editReply({
+        await interaction.followUp({
             embeds: [
                 new MessageEmbed().setDescription(`${currentSong.title} has been skipped!`).setThumbnail(currentSong.thumbnail)
             ]

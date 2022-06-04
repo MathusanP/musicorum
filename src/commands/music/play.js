@@ -34,7 +34,7 @@ module.exports = {
 				)
 		),
 	execute: async ({ interaction, client }) => {
-		if (!interaction.member.voice.channel) return interaction.editReply("You need to be in a VC to use this command")
+		if (!interaction.member.voice.channel) return interaction.followUp("You need to be in a VC to use this command")
 
 		const queue = await client.player.createQueue(interaction.guild)
 		if (!queue.connection) await queue.connect(interaction.member.voice.channel)
@@ -48,7 +48,7 @@ module.exports = {
                 searchEngine: QueryType.YOUTUBE_VIDEO
             })
             if (result.tracks.length === 0)
-                return interaction.editReply("No results")
+                return interaction.followUp("No results")
             
             const song = result.tracks[0]
             await queue.addTrack(song)
@@ -65,7 +65,7 @@ module.exports = {
             })
 
             if (result.tracks.length === 0)
-                return interaction.editReply("No results")
+                return interaction.followUp("No results")
             
             const playlist = result.playlist
             await queue.addTracks(result.tracks)
@@ -80,7 +80,7 @@ module.exports = {
             })
 
             if (result.tracks.length === 0)
-                return interaction.editReply("No results")
+                return interaction.followUp("No results")
             
             const song = result.tracks[0]
             await queue.addTrack(song)
@@ -90,7 +90,7 @@ module.exports = {
                 .setFooter({ text: `Duration: ${song.duration}`})
 		}
         if (!queue.playing) await queue.play()
-        await interaction.editReply({
+        await interaction.followUp({
             embeds: [embed]
         })
 	},
