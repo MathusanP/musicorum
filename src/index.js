@@ -20,6 +20,9 @@ client.player = new Player(client, {
         highWaterMark: 1 << 25
     }
 })
-
+/*
 require('dotenv').config();
 client.login(process.env['Token']);
+*/
+
+client.login('NzM2NTQ3Mjc5MzIxNjk0MjA5.XxwZGw.Jkj4zjaFEeRjQXQyfZttMMWv5VU')
