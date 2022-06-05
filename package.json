@@ -1,6 +1,6 @@
 {
   "name": "musicorum",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A discord music bot",
   "main": "index.js",
   "dependencies": {
@@ -186,7 +186,7 @@
     "ytdl-core": "^4.11.0"
   },
   "scripts": {
-    "test": "/ping"
+    "test": "node src/."
   },
   "repository": {
     "type": "git",
@@ -197,5 +197,11 @@
   "bugs": {
     "url": "https://github.com/bagelwastaken/musicorum/issues"
   },
-  "homepage": "https://github.com/bagelwastaken/musicorum#readme"
+  "homepage": "https://github.com/bagelwastaken/musicorum#readme",
+  "devDependencies": {},
+  "keywords": [
+    "discord",
+    "music",
+    "bot"
+  ]
 }

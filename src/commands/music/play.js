@@ -48,7 +48,7 @@ module.exports = {
                 searchEngine: QueryType.YOUTUBE_VIDEO
             })
             if (result.tracks.length === 0)
-                return interaction.followUp("No results")
+                return interaction.followUp("I couldn't find that song, please make sure the url you have provided is correct.")
             
             const song = result.tracks[0]
             await queue.addTrack(song)
@@ -65,7 +65,7 @@ module.exports = {
             })
 
             if (result.tracks.length === 0)
-                return interaction.followUp("No results")
+                return interaction.followUp("I could not find that playlist, please ensure that you have provided the correct url.")
             
             const playlist = result.playlist
             await queue.addTracks(result.tracks)
@@ -80,7 +80,7 @@ module.exports = {
             })
 
             if (result.tracks.length === 0)
-                return interaction.followUp("No results")
+                return interaction.followUp("No results, please ensure that you have provided the correct key words in your query.")
             
             const song = result.tracks[0]
             await queue.addTrack(song)
