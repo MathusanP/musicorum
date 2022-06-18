@@ -14,12 +14,12 @@ module.exports = {
 		.setDescription('Disconnects the bot from the active voice channel.'),
 
 	error: false,
-	execute: ({ interaction, client }) => {
+	execute: async ({ interaction, client }) => {
         if(!interaction.guild.me.voice.channel) return interaction.followUp("I'm not currently in a voice channel.");
 		const queue = client.player.getQueue(interaction.guildId)
         queue.destroy()
         
-        interaction.followUp('Disconnected :thumbsup:');
+       await interaction.followUp('Disconnected :thumbsup:');
 
 	},
 };
