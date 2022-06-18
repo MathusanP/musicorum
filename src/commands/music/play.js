@@ -34,7 +34,7 @@ module.exports = {
 				)
 		),
 	execute: async ({ interaction, client }) => {
-		if (!interaction.member.voice.channel) return await interaction.followUp("You need to be in a VC to use this command")
+        if (!interaction.member.voice.channel) return await interaction.followUp("You need to be in a VC to use this command")
 
 		const queue = await client.player.createQueue(interaction.guild)
 		if (!queue.connection) await queue.connect(interaction.member.voice.channel)
@@ -48,7 +48,7 @@ module.exports = {
                 searchEngine: QueryType.YOUTUBE_VIDEO
             })
             if (result.tracks.length === 0)
-                return await interaction.followUp("I couldn't find that song, please make sure the url you have provided is correct.")
+                return await interaction.editReply("I couldn't find that song, please make sure the url you have provided is correct.")
             
             const song = result.tracks[0]
             await queue.addTrack(song)
@@ -65,7 +65,7 @@ module.exports = {
             })
 
             if (result.tracks.length === 0)
-                return await interaction.followUp("I could not find that playlist, please ensure that you have provided the correct url.")
+                return await interaction.editReply("I could not find that playlist, please ensure that you have provided the correct url.")
             
             const playlist = result.playlist
             await queue.addTracks(result.tracks)
@@ -80,7 +80,7 @@ module.exports = {
             })
 
             if (result.tracks.length === 0)
-                return await interaction.followUp("No results, please ensure that you have provided the correct key words in your query.")
+                return await interaction.editReply("No results, please ensure that you have provided the correct key words in your query.")
             
             const song = result.tracks[0]
             await queue.addTrack(song)
