@@ -11,8 +11,9 @@ module.exports = {
 
 	data: new SlashCommandBuilder()
 		.setName('disconnect')
-		.setDescription('Disconnects the bot from the active voice channel.'),
-
+		.setDescription('Disconnects the bot from the active voice channel.')
+		.setColor('#830691'),
+	
 	error: false,
 	execute: async ({ interaction, client }) => {
         if(!interaction.guild.me.voice.channel) return interaction.deferReply("I'm not currently in a voice channel.");

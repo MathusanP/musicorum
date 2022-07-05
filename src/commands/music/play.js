@@ -86,6 +86,7 @@ module.exports = {
             await queue.addTrack(song)
             embed
                 .setDescription(`**[${song.title}](${song.url})** has been added to the Queue`)
+                .setColor(`#830691`)
                 .setThumbnail(song.thumbnail)
                 .setFooter({ text: `Duration: ${song.duration}`})
 		}
