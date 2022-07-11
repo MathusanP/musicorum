@@ -1,6 +1,6 @@
 {
   "name": "musicorum",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A discord music bot",
   "main": "index.js",
   "dependencies": {
@@ -193,7 +193,7 @@
     "url": "git+https://github.com/bagelwastaken/musicorum.git"
   },
   "author": "mathusan",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/bagelwastaken/musicorum/issues"
   },
