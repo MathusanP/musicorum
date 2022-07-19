@@ -16,6 +16,6 @@ module.exports = {
 		    if (!queue) return await interaction.followUp("There are no songs in the queue")
 
 		    queue.setPaused(false)
-            await interaction.followUp("Music has been paused! Use `/pause` to resume the music")
+            await interaction.followUp("Music has been resumed!")
 	    },
 }
