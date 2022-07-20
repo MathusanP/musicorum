@@ -33,14 +33,16 @@ module.exports = {
             switch (interaction.options.getString("mode")) {
                 case 'off':
                     mode = 0
+                    setting = "off"
                     break
                 case 'on':
                     mode = 1
+                    setting = "on"
                     break
             }
             mode = queue.setRepeatMode(mode)
             mode = mode == 1 ? 'on' : 'off'
-            await interaction.editReply(`Loop is set to **${mode}**. :infinity: `)
+            await interaction.editReply(`Loop is set to **${setting}**. :infinity: `)
         }
     }
 }
