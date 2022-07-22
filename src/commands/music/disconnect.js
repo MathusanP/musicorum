@@ -15,11 +15,11 @@ module.exports = {
 
 	error: false,
 	execute: async ({ interaction, client }) => {
-        if(!interaction.guild.me.voice.channel) return interaction.deferReply("I'm not currently in a voice channel.");
+        if(!interaction.guild.me.voice.channel) return interaction.editReply("I'm not currently in a voice channel.");
 		const queue = client.player.getQueue(interaction.guildId)
         queue.destroy()
         
-       await interaction.followUp('Disconnected :thumbsup:');
+       await interaction.editReply('Disconnected :thumbsup:');
 
 	},
 };
