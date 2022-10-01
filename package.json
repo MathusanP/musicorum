@@ -16,6 +16,7 @@
     "array-back": "^6.2.2",
     "array-flatten": "^1.1.1",
     "asynckit": "^0.4.0",
+    "axios": "^0.27.2",
     "balanced-match": "^1.0.2",
     "body-parser": "^1.20.0",
     "boolbase": "^1.0.0",
@@ -184,7 +185,7 @@
     "yallist": "^4.0.0",
     "youtube-sr": "^4.1.17",
     "ytdl": "^1.4.1",
-    "ytdl-core": "^4.11.0"
+    "ytdl-core": "^4.11.2"
   },
   "scripts": {
     "test": "node src/."
