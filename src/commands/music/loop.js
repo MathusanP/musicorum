@@ -24,7 +24,7 @@ module.exports = {
 
     execute: async ({ guild, client, interaction }) => {
         let mode = false
-        const queue = client.player.getQueue(interaction.guildId)
+        const queue = await player.nodes.create(interaction.guild)
 
         if (!queue) {
             await interaction.editReply("There is nothing playing in the queue...")

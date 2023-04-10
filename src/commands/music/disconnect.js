@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-
+const { voice } = require('@discordjs/voice')
 module.exports = {
 	name: 'disconnect',
 	description: 'Disconnects the bot from the active voice channel.',
@@ -13,10 +13,10 @@ module.exports = {
 		.setName('disconnect')
 		.setDescription('Disconnects the bot from the active voice channel.'),
 
-	error: false,
+	error: true,
 	execute: async ({ interaction, client }) => {
         if(!interaction.guild.me.voice.channel) return interaction.editReply("I'm not currently in a voice channel.");
-		const queue = client.player.getQueue(interaction.guildId)
+		const queue = await player.nodes.create(interaction.guild)
         queue.destroy()
         
        await interaction.editReply('Disconnected :thumbsup:');

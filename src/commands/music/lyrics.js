@@ -23,7 +23,7 @@ module.exports = {
             return lines
         }
 
-        const queue = client.player.getQueue(interaction.guildId)
+        const queue = await player.nodes.create(interaction.guild)
 
         if (!queue) return await interaction.followUp("There are no songs in the queue")
 

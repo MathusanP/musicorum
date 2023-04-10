@@ -1,9 +1,9 @@
-const Discord = require('discord.js');
-const { Player } = require("discord-player")
-const client = new Discord.Client({
-	intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_VOICE_STATES'],
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Client({
+	intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages , GatewayIntentBits.GuildWebhooks, GatewayIntentBits.GuildVoiceStates, ],
 });
 
+const { Player } = require("discord-player");
 
 const fs = require('fs');
 const eventFiles = fs.readdirSync(`${__dirname}/events`).filter(file => file.endsWith('.js'));

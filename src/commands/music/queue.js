@@ -1,5 +1,6 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
-const { MessageEmbed } = require("discord.js")
+const { SlashCommandBuilder } = require("@discordjs/builders");
+const { MessageEmbed } = require("discord.js");
+const { useMasterPlayer } = require("discord-player");
 
 module.exports = {
     name: 'queue',
@@ -16,7 +17,8 @@ module.exports = {
     .addNumberOption((option) => option.setName("page").setDescription("Page number of the queue").setMinValue(1)),
 
     execute: async ({ client, interaction }) => {
-        const queue = client.player.getQueue(interaction.guildId)
+        const player = useMasterPlayer()
+        const queue = await player.nodes.create(interaction.guild)
         if (!queue || !queue.playing){
             return await interaction.followUp("There are no songs in the queue")
         }

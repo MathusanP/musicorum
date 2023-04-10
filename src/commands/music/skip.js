@@ -10,9 +10,11 @@ module.exports = {
 	ownerOnly: false,
 	guildOnly: true,
 
+    error: true,
+    
     data: new SlashCommandBuilder().setName("skip").setDescription("Skips the current song"),
     execute: async ({ client, interaction }) => {
-        const queue = client.player.getQueue(interaction.guildId)
+        const queue = await player.nodes.create(interaction.guild)
     
         if (!queue) return await interaction.followUp("There are no songs in the queue")
     

@@ -1,6 +1,5 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
-const { MessageEmbed } = require("discord.js")
-const { QueryType } = require("discord-player")
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
+const { QueryType, useMasterPlayer } = require("discord-player")
 
 module.exports = {
     name: 'play',
@@ -33,13 +32,13 @@ module.exports = {
 					option.setName("query").setDescription("Enter your serach query").setRequired(true)
 				)
 		),
-	execute: async ({ interaction, client }) => {
+	execute: async ({ client, interaction }) => {
         if (!interaction.member.voice.channel) return await interaction.followUp("You need to be in a VC to use this command")
-
-		const queue = await client.player.createQueue(interaction.guild)
+		const player = useMasterPlayer()
+        const queue = await player.nodes.create(interaction.guild)
 		if (!queue.connection) await queue.connect(interaction.member.voice.channel)
 
-		let embed = new MessageEmbed()
+		let embed = new EmbedBuilder()
 
 		if (interaction.options.getSubcommand() === "song") {
             let url = interaction.options.getString("url")
@@ -90,7 +89,7 @@ module.exports = {
                 .setThumbnail(song.thumbnail)
                 .setFooter({ text: `Duration: ${song.duration}`})
 		}
-        if (!queue.playing) await queue.play()
+        if (!queue.playing) await queue.node.play()
         await interaction.followUp({
             embeds: [embed]
         })
