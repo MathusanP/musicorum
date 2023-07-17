@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js');
+const { EmbedBuilder, SlashCommandBuilder, ButtonBuilder, ActionRowBuilder, ButtonComponent } = require('discord.js');
 
 module.exports = {
 	name: 'about',
@@ -22,7 +21,7 @@ module.exports = {
 
 		const uptime = `${Math.floor(client.uptime / 86400000)}d ${Math.floor(client.uptime / 3600000) % 24}h ${Math.floor(client.uptime / 60000) % 60}m ${Math.floor(client.uptime / 1000) % 60}s`;
 
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setTitle('My Information')
 			.setColor('#991599')
 			.setDescription(`Hey, I'm **${client.user.tag}**! My prefix is: \`/\`.`)
@@ -42,12 +41,12 @@ module.exports = {
 			.setFooter({ text: 'Do \'/help\' to get started' });
 
 
-		const row = new MessageActionRow()
+		const row = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
-					.setStyle('LINK').setLabel('Support Server').setURL('https://discord.gg/GX4Sz9RZew'),
-				new MessageButton()
-					.setStyle('LINK').setLabel('Invite the bot!').setURL('https://discord.com/oauth2/authorize?client_id=815216273294229504&scope=bot&permissions=2150629384'),
+				new ButtonBuilder()
+					.setStyle(ButtonStyle.Link).setLabel('Support Server').setURL('https://discord.gg/GX4Sz9RZew'),
+				new ButtonBuilder()
+					.setStyle(ButtonStyle.Link).setLabel('Invite').setURL('https://discord.com/api/oauth2/authorize?client_id=815216273294229504&permissions=8&scope=bot+applications.commands'),
 			);
 
 		interaction.followUp({ embeds: [embed], components: [row], ephemeral: false });

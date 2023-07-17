@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
-const { MessageEmbed } = require("discord.js")
+const { EmbedBuilder, SlashCommandBuilder } = require("discord.js")
 
 module.exports = {
     name: 'nowplaying',
@@ -24,7 +23,7 @@ module.exports = {
             const song = queue.current
     
             await interaction.followUp({
-                embeds: [new MessageEmbed()
+                embeds: [new EmbedBuilder()
                 .setThumbnail(song.thumbnail)
                 .setDescription(`Currently Playing [${song.title}](${song.url})\n\n` + bar)
                 .setColor(`#830691`)    

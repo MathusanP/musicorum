@@ -13,7 +13,7 @@ module.exports = {
         .setName('shuffle')
         .setDescription('Shuffles the queue.'),
 
-    error: false,
+    error: true,
     execute: async ({ client, interaction }) => {
         const queue = await player.nodes.create(interaction.guild)
 

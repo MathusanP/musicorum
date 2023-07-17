@@ -1,6 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
-
+const { SlashCommandBuilder } = require('discord.js')
 module.exports = {
 	name: 'jump',
 	description: 'Jump to a specific song in the queue',

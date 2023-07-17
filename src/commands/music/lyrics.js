@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
-const { MessageEmbed } = require("discord.js")
+const { EmbedBuilder, SlashCommandBuilder, Embed } = require("discord.js")
 const axios = require("axios")
 
 module.exports = {
@@ -42,7 +41,7 @@ module.exports = {
             const embeds = substring(4000, data.lyrics).map((value, index) => {
                 const isFirst = index === 0;
 
-                return new MessageEmbed({
+                return new EmbedBuilder({
                     title: isFirst ? `${data.title} - ${data.author}` : null,
                     thumbnail: isFirst ? data.thumbnail.genius : null,
                     description: value,

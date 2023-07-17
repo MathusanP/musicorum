@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require("@discordjs/builders");
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder, SlashCommandBuilder } = require("discord.js");
 const { useMasterPlayer } = require("discord-player");
 
 module.exports = {
@@ -37,7 +36,7 @@ module.exports = {
 
         await interaction.followUp({
             embeds: [
-                new MessageEmbed()
+                new EmbedBuilder()
                     .setDescription(`**Currently Playing**\n` + 
                     (currentSong ? `\`[${currentSong.duration}]\` ${currentSong.title} -- <@${currentSong.requestedBy.id}>` : "None") +
                     `\n\n**Queue**\n${queueString}`
