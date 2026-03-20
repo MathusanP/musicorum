@@ -21,3 +21,5 @@ You can read our [terms of service](https://github.com/bagelwastaken/musicorum/b
 
 - [Support server](https://dsc.gg/mathusan)
 - You can email Bagel at me@mathusan.co.uk
+
+Please note that due to terms and regulations from Google. Musicorum is discontinued and will not be receiving any updates.
